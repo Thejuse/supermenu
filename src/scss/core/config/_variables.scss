@@ -3,6 +3,7 @@ $sm-height: 100vh;
 
 // Animations
 $sm-transitionDuration: 0.3s !default;
+$sm-transitionMenuOpen: 0.5s cubic-bezier(0.57, 0.01, 0.18, 0.96);
 
 //  Colors
 $sm-backgroundColor: #f3f3f3 !default;

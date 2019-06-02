@@ -28,6 +28,47 @@ function smClassAdderAnchor(){
     })
 }
 
+function smSetWidth(width, position){
+    $('#supermenu').width(width);
+    if(position == 'right'){
+        $('#supermenu').css('right', '-' + width);
+    } else {
+        $('#supermenu').css('left', '-' + width);
+    }
+}
+
+function smTrigger(triggerClass, triggerActiveClass, width, position){
+    var width = '-' + width;
+    console.log(width);
+    $(triggerClass).on('click', function(e){
+        console.log('Test')
+        e.preventDefault();
+        $(triggerClass).stop();
+        $('#supermenu').stop();
+        if(position == 'right'){
+            if($('#supermenu').hasClass(triggerActiveClass)){
+                $(triggerClass).removeClass(triggerActiveClass);
+                document.getElementById('supermenu').style.right = width;
+                $('#supermenu').removeClass(triggerActiveClass);
+            } else {
+                document.getElementById('supermenu').style.right = "0%";
+                $('#supermenu').addClass(triggerActiveClass);
+                $(triggerClass).addClass(triggerActiveClass);
+            }
+        } else {
+            if($('#supermenu').hasClass(triggerActiveClass)){
+                $(triggerClass).removeClass(triggerActiveClass);
+                document.getElementById('supermenu').style.left = width;
+                $('#supermenu').removeClass(triggerActiveClass);
+            } else {
+                document.getElementById('supermenu').style.left = "0%";
+                $('#supermenu').addClass(triggerActiveClass);
+                $(triggerClass).addClass(triggerActiveClass);
+            }
+        }
+    });
+}
+
 function smClassAdder(){
     smClassAdderListItem();
     smClassAdderList();
@@ -40,13 +81,16 @@ function smInit(menuID){
 }
 
 $.fn.supermenu = function(options){
-    smInit('#supermenu');
     var smSettings = $.extend({}, $.fn.supermenu.defaults, options);
-
+    smInit('#supermenu');
+    smSetWidth(smSettings.width, smSettings.position);
+    smTrigger(smSettings.triggerClass, smSettings.triggerActiveClass, smSettings.width, smSettings.position);
 };
 
 $.fn.supermenu.defaults = {
-    width: 70,
+    width: '70%',
     theme: 'light',
-    position: 'right'
+    position: 'right',
+    triggerActiveClass: 'sm-menu-active',
+    triggerClass: '.sm-menu-trigger'
 }

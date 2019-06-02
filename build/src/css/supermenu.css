@@ -10,7 +10,8 @@
 #supermenu {
   position: fixed;
   height: 100vh;
-  background-color: #f3f3f3; }
+  background-color: #f3f3f3;
+  transition: 0.5s cubic-bezier(0.57, 0.01, 0.18, 0.96); }
   #supermenu.supermenu-right {
     right: 0; }
   #supermenu.supermenu-left {
