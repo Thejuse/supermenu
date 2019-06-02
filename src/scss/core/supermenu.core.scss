@@ -3,5 +3,39 @@
 @import './config/variables';
 
 #supermenu{
-    
+    position: fixed;
+    height: $sm-height;
+    background-color: $sm-backgroundColor;
+    &.supermenu-right{
+        right: 0;
+    }
+    &.supermenu-left{
+        left: 0;;
+    }
+    .sm-list{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        .sm-list-item{
+            border-bottom: $sm-borderBottom;
+            .sm-list-item-anchor{
+                display: block;
+                color: $sm-textColor;
+                padding: $sm-padding-anchor;
+                transition: $sm-transitionDuration;
+                &:hover{
+                    background-color: $sm-backgroundColorHover;
+                    text-decoration: none;
+                }
+            }
+            &.sm-has-submenu{
+                .sm-submenu{
+                    display: none;
+                    .sm-list-item{
+                        border-bottom: none !important;
+                    }
+                }
+            }
+        }
+    }
 }

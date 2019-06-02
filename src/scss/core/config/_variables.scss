@@ -1,0 +1,17 @@
+//  Core-Variables
+$sm-height: 100vh;
+
+// Animations
+$sm-transitionDuration: 0.3s !default;
+
+//  Colors
+$sm-backgroundColor: #f3f3f3 !default;
+$sm-borderColor: rgba(#000, 0.2) !default;
+$sm-textColor: rgba(#000, 0.75) !default;
+$sm-backgroundColorHover: rgba(#fff, 0.8) !default;
+
+// Borders
+$sm-borderBottom: 1px solid $sm-borderColor;
+
+// Spaces
+$sm-padding-anchor: 10px 20px;

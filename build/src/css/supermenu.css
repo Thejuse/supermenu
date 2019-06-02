@@ -7,3 +7,29 @@
  * 
  * License: MIT-License
  */
+#supermenu {
+  position: fixed;
+  height: 100vh;
+  background-color: #f3f3f3; }
+  #supermenu.supermenu-right {
+    right: 0; }
+  #supermenu.supermenu-left {
+    left: 0; }
+  #supermenu .sm-list {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    #supermenu .sm-list .sm-list-item {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
+      #supermenu .sm-list .sm-list-item .sm-list-item-anchor {
+        display: block;
+        color: rgba(0, 0, 0, 0.75);
+        padding: 10px 20px;
+        transition: 0.3s; }
+        #supermenu .sm-list .sm-list-item .sm-list-item-anchor:hover {
+          background-color: rgba(255, 255, 255, 0.8);
+          text-decoration: none; }
+      #supermenu .sm-list .sm-list-item.sm-has-submenu .sm-submenu {
+        display: none; }
+        #supermenu .sm-list .sm-list-item.sm-has-submenu .sm-submenu .sm-list-item {
+          border-bottom: none !important; }
