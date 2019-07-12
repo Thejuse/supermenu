@@ -19,6 +19,7 @@ function smClassAdderList(){
         if($(this).parent().hasClass('sm-list-item')){
             $(this).parent().addClass('sm-has-submenu');
             $(this).addClass('sm-submenu');
+            $(this).parent().prepend('<span class="sm-submenu-toggler" title="Click to Open">Submenu Toggel</span>')
         }
     });
 }
@@ -39,9 +40,7 @@ function smSetWidth(width, position){
 
 function smTrigger(triggerClass, triggerActiveClass, width, position){
     var width = '-' + width;
-    console.log(width);
     $(triggerClass).on('click', function(e){
-        console.log('Test')
         e.preventDefault();
         $(triggerClass).stop();
         $('#supermenu').stop();
@@ -69,20 +68,35 @@ function smTrigger(triggerClass, triggerActiveClass, width, position){
     });
 }
 
+function smSubMenuAnchor(){
+    $('.sm-submenu-toggler').on('click', function(e){
+        if($(this).parent().hasClass('sm-opend')){
+            $(this).parent().removeClass('sm-opend');
+            $(this).parent().find('.sm-submenu').slideToggle();
+        } else {
+            $(this).parent().addClass('sm-opend');
+            $(this).parent().find('.sm-submenu').slideToggle();
+        }
+    });
+}
+
 function smClassAdder(){
     smClassAdderListItem();
     smClassAdderList();
     smClassAdderAnchor();
 }
 
-function smInit(menuID){
+function smInit(menuID, position, theme){
     smClassAdder();
     $(menuID).addClass('sm-init');
+    $(menuID).addClass('supermenu-' + position);
+    $(menuID).addClass('supermenu-' + theme);
+    smSubMenuAnchor();
 }
 
 $.fn.supermenu = function(options){
     var smSettings = $.extend({}, $.fn.supermenu.defaults, options);
-    smInit('#supermenu');
+    smInit('#supermenu', smSettings.position, smSettings.theme);
     smSetWidth(smSettings.width, smSettings.position);
     smTrigger(smSettings.triggerClass, smSettings.triggerActiveClass, smSettings.width, smSettings.position);
 };

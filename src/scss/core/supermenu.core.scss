@@ -2,6 +2,10 @@
 @import './config/mixins';
 @import './config/variables';
 
+nav#supermenu:not(.sm-init) {
+    right: -100%;
+}
+
 #supermenu{
     position: fixed;
     height: $sm-height;
@@ -11,7 +15,7 @@
         right: 0;
     }
     &.supermenu-left{
-        left: 0;;
+        left: 0;
     }
     .sm-list{
         margin: 0;
@@ -30,10 +34,49 @@
                 }
             }
             &.sm-has-submenu{
+                position: relative;
+                .sm-submenu-toggler{
+                    height: 20px;
+                    width: 20px;
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    overflow: hidden;
+                    text-indent: -999999px;
+                    cursor: pointer;
+                    transition: 0.2s linear;
+                    &:after{
+                        content: '';
+                        border: 2px solid rgba(0, 0, 0, 0.2);
+                        box-sizing: content-box;
+                        display: block;
+                        width: 8px;
+                        height: 8px;
+                        margin: auto;
+                        position: absolute;
+                        border-bottom: 0;
+                        border-right: 0;
+                        top: 0;
+                        left: 50%;
+                        transform: rotateZ(225deg) translateY(-50%);
+                    }
+                }
                 .sm-submenu{
+                    padding: 0 0 0 20px;
                     display: none;
                     .sm-list-item{
-                        border-bottom: none !important;
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+                        &:last-child{
+                            border: none;
+                        }
+                    }
+                }
+                &.sm-opend{
+                    .sm-submenu-toggler{
+                        transform: rotate(180deg);
+                    }
+                    .sm-submenu{
+
                     }
                 }
             }
