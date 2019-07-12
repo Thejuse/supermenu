@@ -2,15 +2,12 @@
 @import './config/mixins';
 @import './config/variables';
 
-nav#supermenu:not(.sm-init) {
-    right: -100%;
-}
-
 #supermenu{
     position: fixed;
     height: $sm-height;
-    background-color: $sm-backgroundColor;
     transition: $sm-transitionMenuOpen;
+    z-index: $sm-zindex;
+    overflow: scroll;
     &.supermenu-right{
         right: 0;
     }
@@ -25,11 +22,9 @@ nav#supermenu:not(.sm-init) {
             border-bottom: $sm-borderBottom;
             .sm-list-item-anchor{
                 display: block;
-                color: $sm-textColor;
                 padding: $sm-padding-anchor;
                 transition: $sm-transitionDuration;
                 &:hover{
-                    background-color: $sm-backgroundColorHover;
                     text-decoration: none;
                 }
             }
@@ -47,7 +42,7 @@ nav#supermenu:not(.sm-init) {
                     transition: 0.2s linear;
                     &:after{
                         content: '';
-                        border: 2px solid rgba(0, 0, 0, 0.2);
+                        border: $sm-borderSubMenuToggler;
                         box-sizing: content-box;
                         display: block;
                         width: 8px;
@@ -65,7 +60,7 @@ nav#supermenu:not(.sm-init) {
                     padding: 0 0 0 20px;
                     display: none;
                     .sm-list-item{
-                        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+                        border-bottom: $sm-borderBottom;
                         &:last-child{
                             border: none;
                         }

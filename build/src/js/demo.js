@@ -1,3 +1,7 @@
 $(document).ready(function () {
-    $("#supermenu").supermenu();
+    $("#supermenu").supermenu({
+        width: '30%',
+        theme: 'dark',
+        position: 'right',
+    });
 });

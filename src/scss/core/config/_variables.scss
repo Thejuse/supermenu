@@ -1,5 +1,6 @@
 //  Core-Variables
 $sm-height: 100vh;
+$sm-zindex: 1000;
 
 // Animations
 $sm-transitionDuration: 0.3s !default;
@@ -11,8 +12,14 @@ $sm-borderColor: rgba(#000, 0.2) !default;
 $sm-textColor: rgba(#000, 0.75) !default;
 $sm-backgroundColorHover: rgba(#fff, 0.8) !default;
 
+$sm-dark-backgroundColor: #333 !default;
+$sm-dark-borderColor: rgba(#fff, 0.2) !default;
+$sm-dark-textColor: rgba(#fff, 0.85 ) !default;
+$sm-dark-backgroundColorHover: rgba(#000, 0.8) !default;
+
 // Borders
-$sm-borderBottom: 1px solid $sm-borderColor;
+$sm-borderBottom: 1px solid;
+$sm-borderSubMenuToggler: 2px solid;
 
 // Spaces
 $sm-padding-anchor: 10px 50px 10px 20px;
