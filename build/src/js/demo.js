@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $("#supermenu").supermenu({
-        width: '30%',
+        width: '60%',
         theme: 'dark',
         position: 'right',
     });

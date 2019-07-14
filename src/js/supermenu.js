@@ -86,17 +86,23 @@ function smClassAdder(){
     smClassAdderAnchor();
 }
 
-function smInit(menuID, position, theme){
+function smPaddingAdder(menuID, paddingTop, paddingBottom){
+    $(menuID).css('padding-top', paddingTop);
+    $(menuID).css('padding-bottom', paddingBottom);
+}
+
+function smInit(menuID, position, theme, paddingTop, paddingBottom){
     smClassAdder();
     $(menuID).addClass('sm-init');
     $(menuID).addClass('supermenu-' + position);
     $(menuID).addClass('supermenu-' + theme);
     smSubMenuAnchor();
+    smPaddingAdder(menuID, paddingTop, paddingBottom);
 }
 
 $.fn.supermenu = function(options){
     var smSettings = $.extend({}, $.fn.supermenu.defaults, options);
-    smInit('#supermenu', smSettings.position, smSettings.theme);
+    smInit('#supermenu', smSettings.position, smSettings.theme, smSettings.paddingTop, smSettings.paddingBottom);
     smSetWidth(smSettings.width, smSettings.position);
     smTrigger(smSettings.triggerClass, smSettings.triggerActiveClass, smSettings.width, smSettings.position);
 };
@@ -106,5 +112,7 @@ $.fn.supermenu.defaults = {
     theme: 'light',
     position: 'right',
     triggerActiveClass: 'sm-menu-active',
-    triggerClass: '.sm-menu-trigger'
+    triggerClass: '.sm-menu-trigger',
+    paddingTop: '0',
+    paddingBottom: '0'
 }
