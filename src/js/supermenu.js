@@ -91,11 +91,21 @@ function smPaddingAdder(menuID, paddingTop, paddingBottom){
     $(menuID).css('padding-bottom', paddingBottom);
 }
 
+function smTheme(menuID, theme){
+    if(theme == 'custom'){
+        $(menuID).addClass('supermenu-custom');
+    } else if(theme == 'dark' || theme == 'light'){
+        $(menuID).addClass('supermenu-' + theme);
+    } else {
+        console.log('Theme not supported!');
+    }
+}
+
 function smInit(menuID, position, theme, paddingTop, paddingBottom){
     smClassAdder();
     $(menuID).addClass('sm-init');
     $(menuID).addClass('supermenu-' + position);
-    $(menuID).addClass('supermenu-' + theme);
+    smTheme(menuID, theme);
     smSubMenuAnchor();
     smPaddingAdder(menuID, paddingTop, paddingBottom);
 }

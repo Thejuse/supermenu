@@ -1,2 +1,5 @@
 *.codekit3
 .DS_Store
+/build/index.html
+/build/README.html
+/build/CHANGELOG.html

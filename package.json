@@ -11,7 +11,13 @@
     "url": "git+https://github.com/Thejuse/supermenu.git"
   },
   "keywords": [
-    "menu"
+    "menu",
+    "jQuery",
+    "mobilemenu",
+    "html",
+    "javascript",
+    "scss",
+    "css"
   ],
   "author": "Thejuse",
   "license": "MIT",
