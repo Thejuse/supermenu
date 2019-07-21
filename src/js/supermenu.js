@@ -113,7 +113,7 @@ function smPaddingMarginAdder(menuID, padding, margin){
     $(menuID).css('margin-bottom', margin.bottom);
 }
 
-function smTheme(menuID, theme){
+function smThemeAddon(menuID, theme){
     if(theme == 'custom'){
         $(menuID).addClass('supermenu-custom');
     } else if(theme == 'dark' || theme == 'light'){
@@ -123,12 +123,15 @@ function smTheme(menuID, theme){
     }
 }
 
+function smTitleAddon(title){
+    $('.sm-list-item').first().prepend('<li class="title sm-list-item">' + title + '</li>');
+}
+
 $.fn.supermenu = function(options){
     var smSettings = $.extend({}, $.fn.supermenu.defaults, options);
     smClassAdder();
     $('#supermenu').addClass('sm-init');
     $('#supermenu').addClass('supermenu-' + smSettings.position);
-    smTheme('#supermenu', smSettings.theme);
     smSubMenuAnchor();
     smPaddingMarginAdder('#supermenu', smSettings.padding, smSettings.margin);
     smSetWidth(smSettings.width, smSettings.position);
@@ -138,6 +141,11 @@ $.fn.supermenu = function(options){
             smCloseMenuOnEsc(smSettings.triggerClass, smSettings.triggerActiveClass, smSettings.width, smSettings.position);
        }
     });
+    // AddOns
+    smThemeAddon('#supermenu', smSettings.theme);
+    if(smSettings.title){
+        smTitleAddon(smSettings.title);
+    }
 };
 
 $.fn.supermenu.defaults = {
@@ -153,5 +161,6 @@ $.fn.supermenu.defaults = {
     margin: {
         top: '0',
         bottom: '0'
-    }
+    },
+    title: ''
 }
