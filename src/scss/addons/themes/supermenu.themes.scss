@@ -1,0 +1,56 @@
+#supermenu{
+    &.supermenu-light{
+        background-color: $sm-backgroundColor;
+        .sm-list{
+            .sm-list-item{
+                .sm-list-item-anchor{
+                    color: $sm-textColor;
+                    border-color: $sm-borderColor;
+                    &:hover{
+                        background-color: $sm-backgroundColorHover;
+                    }
+                }
+                &.sm-has-submenu{
+                    .sm-submenu-toggler{
+                        &:after{
+                            border-color: $sm-borderColor;
+                        }
+                    }
+                    .sm-submenu{
+                        background-color: $sm-backgroundHighlight;
+                        .sm-list-item{
+                            border-color: $sm-borderColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.supermenu-dark{
+        background-color: $sm-dark-backgroundColor;
+        .sm-list{
+            .sm-list-item{
+                .sm-list-item-anchor{
+                    color: $sm-dark-textColor;
+                    border-color: $sm-dark-borderColor;
+                    &:hover{
+                        background-color: $sm-dark-backgroundColorHover;
+                    }
+                }
+                &.sm-has-submenu{
+                    .sm-submenu-toggler{
+                        &:after{
+                            border-color: $sm-dark-borderColor;
+                        }
+                    }
+                    .sm-submenu{
+                        background-color: $sm-dark-backgroundHighlight;
+                        .sm-list-item{
+                            border-color: $sm-dark-borderColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

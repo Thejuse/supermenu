@@ -1,0 +1,24 @@
+{
+  "name": "supermenujs",
+  "version": "1.0.0",
+  "description": "Empower your website with a mobile or dektop menu in secounds.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thejuse/supermenu.git"
+  },
+  "keywords": [
+    "menu",
+    "jQuery",
+    "mobilemenu",
+    "html",
+    "javascript",
+    "scss",
+    "css"
+  ],
+  "author": "Julian Seidl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Thejuse/supermenu/issues"
+  },
+  "homepage": "https://www.supermenujs.com"
+}
