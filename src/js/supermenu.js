@@ -23,6 +23,7 @@ function smClassAdderList(){
         }
     });
 }
+
 function smClassAdderAnchor(){
     $('#supermenu a').each(function(){
         $(this).addClass('sm-list-item-anchor');
@@ -72,10 +73,10 @@ function smSubMenuAnchor(){
     $('.sm-submenu-toggler').on('click', function(e){
         if($(this).parent().hasClass('sm-opend')){
             $(this).parent().removeClass('sm-opend');
-            $(this).parent().find('.sm-submenu').slideToggle();
+            $(this).parent().find('.sm-submenu').first().slideToggle();
         } else {
             $(this).parent().addClass('sm-opend');
-            $(this).parent().find('.sm-submenu').slideToggle();
+            $(this).parent().find('.sm-submenu').first().slideToggle();
         }
     });
 }

@@ -19,11 +19,11 @@
         padding: 0;
         list-style: none;
         .sm-list-item{
-            border-bottom: $sm-borderBottom;
             .sm-list-item-anchor{
                 display: block;
                 padding: $sm-padding-anchor;
                 transition: $sm-transitionDuration;
+                border-bottom: $sm-borderBottom;
                 &:hover{
                     text-decoration: none;
                 }
@@ -60,14 +60,13 @@
                     padding: 0 0 0 20px;
                     display: none;
                     .sm-list-item{
-                        border-bottom: $sm-borderBottom;
                         &:last-child{
                             border: none;
                         }
                     }
                 }
                 &.sm-opend{
-                    .sm-submenu-toggler{
+                    > .sm-submenu-toggler{
                         transform: rotate(180deg);
                     }
                     .sm-submenu{

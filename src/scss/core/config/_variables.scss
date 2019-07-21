@@ -7,15 +7,19 @@ $sm-transitionDuration: 0.3s !default;
 $sm-transitionMenuOpen: 0.5s cubic-bezier(0.57, 0.01, 0.18, 0.96);
 
 //  Colors
+//  Light-Colors
 $sm-backgroundColor: #f3f3f3 !default;
 $sm-borderColor: rgba(#000, 0.2) !default;
 $sm-textColor: rgba(#000, 0.75) !default;
 $sm-backgroundColorHover: rgba(#fff, 0.8) !default;
+$sm-backgroundHighlight: rgba(0,0,0,0.08) !default;
 
+// Dark-Theme Colors
 $sm-dark-backgroundColor: #333 !default;
 $sm-dark-borderColor: rgba(#fff, 0.2) !default;
 $sm-dark-textColor: rgba(#fff, 0.85 ) !default;
 $sm-dark-backgroundColorHover: rgba(#000, 0.8) !default;
+$sm-dark-backgroundHighlight: rgba( 255,255,255, 0.08 ) !default;
 
 // Borders
 $sm-borderBottom: 1px solid;
