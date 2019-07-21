@@ -69,6 +69,23 @@ function smTrigger(triggerClass, triggerActiveClass, width, position){
     });
 }
 
+function smCloseMenuOnEsc(triggerClass, triggerActiveClass, width, position){
+    var width = '-' + width;
+    if(position == 'right'){
+        if($('#supermenu').hasClass(triggerActiveClass)){
+            $(triggerClass).removeClass(triggerActiveClass);
+            document.getElementById('supermenu').style.right = width;
+            $('#supermenu').removeClass(triggerActiveClass);
+        }
+    } else {
+        if($('#supermenu').hasClass(triggerActiveClass)){
+            $(triggerClass).removeClass(triggerActiveClass);
+            document.getElementById('supermenu').style.left = width;
+            $('#supermenu').removeClass(triggerActiveClass);
+        }
+    }
+}
+
 function smSubMenuAnchor(){
     $('.sm-submenu-toggler').on('click', function(e){
         if($(this).parent().hasClass('sm-opend')){
@@ -102,20 +119,21 @@ function smTheme(menuID, theme){
     }
 }
 
-function smInit(menuID, position, theme, paddingTop, paddingBottom){
-    smClassAdder();
-    $(menuID).addClass('sm-init');
-    $(menuID).addClass('supermenu-' + position);
-    smTheme(menuID, theme);
-    smSubMenuAnchor();
-    smPaddingAdder(menuID, paddingTop, paddingBottom);
-}
-
 $.fn.supermenu = function(options){
     var smSettings = $.extend({}, $.fn.supermenu.defaults, options);
-    smInit('#supermenu', smSettings.position, smSettings.theme, smSettings.paddingTop, smSettings.paddingBottom);
+    smClassAdder();
+    $('#supermenu').addClass('sm-init');
+    $('#supermenu').addClass('supermenu-' + smSettings.position);
+    smTheme('#supermenu', smSettings.theme);
+    smSubMenuAnchor();
+    smPaddingAdder('#supermenu', smSettings.paddingTop, smSettings.paddingBottom);
     smSetWidth(smSettings.width, smSettings.position);
     smTrigger(smSettings.triggerClass, smSettings.triggerActiveClass, smSettings.width, smSettings.position);
+    $(document).keyup(function(e) {
+        if (e.key === "Escape") {
+            smCloseMenuOnEsc(smSettings.triggerClass, smSettings.triggerActiveClass, smSettings.width, smSettings.position);
+       }
+    });
 };
 
 $.fn.supermenu.defaults = {
