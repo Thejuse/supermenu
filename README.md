@@ -16,7 +16,11 @@
 - Put it in your CSS folder and add it to your HTML code
 
 #### Installation via CDN
-- Coming soon
+- CSS ```<link rel="stylesheet" href="https://unpkg.com/socialcolors@3.2.0/css/socialcolors.css">```
+- JavaScript ```https://cdn.jsdelivr.net/npm/supermenujs@1.0.0-dev/build/js/supermenu.min.js```
+
+### Installation via NPM
+Use `npm install supermenujs`
 
 ### Minimal Setup
 
