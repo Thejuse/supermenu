@@ -13,6 +13,7 @@ function smClassAdderListItem(){
         $(this).addClass('sm-list-item');
     });
 }
+
 function smClassAdderList(){
     $('#supermenu ul').each(function(){
         $(this).addClass('sm-list');
@@ -104,9 +105,12 @@ function smClassAdder(){
     smClassAdderAnchor();
 }
 
-function smPaddingAdder(menuID, paddingTop, paddingBottom){
-    $(menuID).css('padding-top', paddingTop);
-    $(menuID).css('padding-bottom', paddingBottom);
+function smPaddingMarginAdder(menuID, padding, margin){
+    $(menuID).css('padding-top', padding.top);
+    $(menuID).css('padding-bottom', padding.bottom);
+
+    $(menuID).css('margin-top', margin.top);
+    $(menuID).css('margin-bottom', margin.bottom);
 }
 
 function smTheme(menuID, theme){
@@ -126,7 +130,7 @@ $.fn.supermenu = function(options){
     $('#supermenu').addClass('supermenu-' + smSettings.position);
     smTheme('#supermenu', smSettings.theme);
     smSubMenuAnchor();
-    smPaddingAdder('#supermenu', smSettings.paddingTop, smSettings.paddingBottom);
+    smPaddingMarginAdder('#supermenu', smSettings.padding, smSettings.margin);
     smSetWidth(smSettings.width, smSettings.position);
     smTrigger(smSettings.triggerClass, smSettings.triggerActiveClass, smSettings.width, smSettings.position);
     $(document).keyup(function(e) {
@@ -142,6 +146,12 @@ $.fn.supermenu.defaults = {
     position: 'right',
     triggerActiveClass: 'sm-menu-active',
     triggerClass: '.sm-menu-trigger',
-    paddingTop: '0',
-    paddingBottom: '0'
+    padding: {
+        top: '0',
+        bottom: '0'
+    },
+    margin: {
+        top: '0',
+        bottom: '0'
+    }
 }
