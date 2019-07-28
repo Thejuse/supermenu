@@ -7,6 +7,10 @@
                     color: $sm-textColor;
                     border-color: $sm-borderColor;
                 }
+                &.sm-item-active,
+                &.active {
+                    background-color: $sm-backgroundColorHover;  
+                }
                 .sm-list-item-anchor{
                     color: $sm-textColor;
                     border-color: $sm-borderColor;
@@ -37,6 +41,10 @@
                 &.title{
                     color: $sm-dark-textColor;
                     border-color: $sm-dark-borderColor;
+                }
+                &.sm-item-active,
+                &.active {
+                    background-color: $sm-dark-backgroundColorHover;   
                 }
                 .sm-list-item-anchor{
                     color: $sm-dark-textColor;
