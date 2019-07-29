@@ -1,6 +1,6 @@
 /*!
  * supermenu
- * supermenu.jseidl.at
+ * supermenujs.com
  * 
  * Copyright (c) Julian Seidl
  * www.jseidl.at
@@ -14,4 +14,6 @@
 
 // Addons
 @import 'addons/startup/supermenu.startup';
+@import 'addons/title/supermenu.title';
+@import 'addons/footer/supermenu.footer';
 @import 'addons/themes/supermenu.themes';

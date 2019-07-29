@@ -1,0 +1,8 @@
+#supermenu{
+    .sm-title{
+        text-align: center;
+        padding: $sm-padding-anchor;
+        transition: $sm-transitionDuration;
+        border-bottom: $sm-borderBottom;
+    }
+}

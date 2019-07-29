@@ -1,5 +1,5 @@
-/*! supermenu supermenu.jseidl.at Copyright (c) Julian Seidl www.jseidl.at License: MIT-License */
-#supermenu { position: fixed; height: 100vh; transition: 0.5s cubic-bezier(0.57, 0.01, 0.18, 0.96); z-index: 1000; overflow: scroll; }
+/*! supermenu supermenujs.com Copyright (c) Julian Seidl www.jseidl.at License: MIT-License */
+#supermenu { position: fixed; height: 100vh; transition: 0.5s cubic-bezier(0.57, 0.01, 0.18, 0.96); z-index: 1000; }
 
 #supermenu.supermenu-right { right: 0; }
 
@@ -25,7 +25,17 @@
 
 nav#supermenu:not(.sm-init) { right: -100%; }
 
+#supermenu .sm-title { text-align: center; padding: 10px 50px 10px 20px; transition: 0.3s; border-bottom: 1px solid; }
+
+#supermenu.sm-has-footer .sm-list { overflow: scroll; }
+
+#supermenu.sm-has-footer .sm-footer { position: absolute; top: auto; bottom: 0; left: 0; right: 0; z-index: 1; padding: 10px 20px 10px 20px; border-top: 1px solid; }
+
 #supermenu.supermenu-light { background-color: #f3f3f3; }
+
+#supermenu.supermenu-light .sm-list .sm-list-item.sm-title { color: rgba(0, 0, 0, 0.75); border-color: rgba(0, 0, 0, 0.2); }
+
+#supermenu.supermenu-light .sm-list .sm-list-item.sm-item-active, #supermenu.supermenu-light .sm-list .sm-list-item.active { background-color: rgba(255, 255, 255, 0.8); }
 
 #supermenu.supermenu-light .sm-list .sm-list-item .sm-list-item-anchor { color: rgba(0, 0, 0, 0.75); border-color: rgba(0, 0, 0, 0.2); }
 
@@ -37,7 +47,13 @@ nav#supermenu:not(.sm-init) { right: -100%; }
 
 #supermenu.supermenu-light .sm-list .sm-list-item.sm-has-submenu .sm-submenu .sm-list-item { border-color: rgba(0, 0, 0, 0.2); }
 
+#supermenu.supermenu-light .sm-footer { background-color: #f3f3f3; border-color: rgba(0, 0, 0, 0.2); }
+
 #supermenu.supermenu-dark { background-color: #333; }
+
+#supermenu.supermenu-dark .sm-list .sm-list-item.sm-title { color: rgba(255, 255, 255, 0.85); border-color: rgba(255, 255, 255, 0.2); }
+
+#supermenu.supermenu-dark .sm-list .sm-list-item.sm-item-active, #supermenu.supermenu-dark .sm-list .sm-list-item.active { background-color: rgba(0, 0, 0, 0.8); }
 
 #supermenu.supermenu-dark .sm-list .sm-list-item .sm-list-item-anchor { color: rgba(255, 255, 255, 0.85); border-color: rgba(255, 255, 255, 0.2); }
 
@@ -48,3 +64,5 @@ nav#supermenu:not(.sm-init) { right: -100%; }
 #supermenu.supermenu-dark .sm-list .sm-list-item.sm-has-submenu .sm-submenu { background-color: rgba(255, 255, 255, 0.08); }
 
 #supermenu.supermenu-dark .sm-list .sm-list-item.sm-has-submenu .sm-submenu .sm-list-item { border-color: rgba(255, 255, 255, 0.2); }
+
+#supermenu.supermenu-dark .sm-footer { background-color: #333; border-color: rgba(255, 255, 255, 0.2); }
