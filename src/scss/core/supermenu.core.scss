@@ -7,7 +7,6 @@
     height: $sm-height;
     transition: $sm-transitionMenuOpen;
     z-index: $sm-zindex;
-    overflow: scroll;
     &.supermenu-right{
         right: 0;
     }

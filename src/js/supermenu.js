@@ -124,7 +124,20 @@ function smThemeAddon(menuID, theme){
 }
 
 function smTitleAddon(title){
-    $('.sm-list-item').first().prepend('<li class="title sm-list-item">' + title + '</li>');
+    $('#supermenu').addClass('sm-has-title');
+    $('.sm-list-item').first().prepend('<li class="sm-title sm-list-item">' + title + '</li>');
+}
+
+function smFooterAddon(footerCustomCode){
+    $('#supermenu').addClass('sm-has-footer');
+    var footercode = '<div class="sm-footer">' + footerCustomCode + '</div>';
+    $('#supermenu').append(footercode);
+    smHeightSetter();
+}
+
+function smHeightSetter(){
+    var height = $('.sm-footer').outerHeight();
+    $('.sm-list').first().css('height', 'calc(100vh - ' + height + 'px');
 }
 
 $.fn.supermenu = function(options){
@@ -142,9 +155,14 @@ $.fn.supermenu = function(options){
        }
     });
     // AddOns
-    smThemeAddon('#supermenu', smSettings.theme);
+    if(smSettings.theme){
+        smThemeAddon('#supermenu', smSettings.theme);
+    }
     if(smSettings.title){
         smTitleAddon(smSettings.title);
+    }
+    if(smSettings.footer){
+        smFooterAddon(smSettings.footer);
     }
 };
 
@@ -162,5 +180,6 @@ $.fn.supermenu.defaults = {
         top: '0',
         bottom: '0'
     },
-    title: ''
+    title: '',
+    footer: ''
 }

@@ -3,7 +3,7 @@
         background-color: $sm-backgroundColor;
         .sm-list{
             .sm-list-item{
-                &.title{
+                &.sm-title{
                     color: $sm-textColor;
                     border-color: $sm-borderColor;
                 }
@@ -33,12 +33,16 @@
                 }
             }
         }
+        .sm-footer{
+            background-color: $sm-backgroundColor;
+            border-color: $sm-borderColor;
+        }
     }
     &.supermenu-dark{
         background-color: $sm-dark-backgroundColor;
         .sm-list{
             .sm-list-item{
-                &.title{
+                &.sm-title{
                     color: $sm-dark-textColor;
                     border-color: $sm-dark-borderColor;
                 }
@@ -67,6 +71,10 @@
                     }
                 }
             }
+        }
+        .sm-footer{
+            background-color: $sm-dark-backgroundColor;
+            border-color: $sm-dark-borderColor;
         }
     }
 }
